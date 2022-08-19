@@ -496,6 +496,14 @@ const App = () => {
               />
             </div>
           </div>
+          <div className="card-container col-12">
+            <iframe
+              src="https://public.tableau.com/views/final_16608805948390/Sheet1?:showVizHome=no&:embed=true"
+              title="Graph"
+              width="100%"
+              height="600px"
+            ></iframe>
+          </div>
         </div>
         <div className="body_background"></div>
       </div>
