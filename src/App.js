@@ -498,7 +498,23 @@ const App = () => {
           </div>
           <div className="card-container col-12">
             <iframe
-              src="https://public.tableau.com/views/final_16608805948390/Sheet1?:showVizHome=no&:embed=true"
+              src="https://public.tableau.com/views/final-2_16608840188550/Dashboard2?:language=en-US&:display_count=n&:origin=viz_share_link:showVizHome=no&:embed=true"
+              title="Graph"
+              width="100%"
+              height="600px"
+            ></iframe>
+          </div>
+          <div className="card-container col-12">
+            <iframe
+              src="https://public.tableau.com/views/final_16608805948390/MainDashboard?:language=en-US&:display_count=n&:origin=viz_share_link:showVizHome=no&:embed=true"
+              title="Graph"
+              width="100%"
+              height="600px"
+            ></iframe>
+          </div>
+          <div className="card-container col-12">
+            <iframe
+              src="https://public.tableau.com/views/AQIINDEXING/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link:showVizHome=no&:embed=true"
               title="Graph"
               width="100%"
               height="600px"
