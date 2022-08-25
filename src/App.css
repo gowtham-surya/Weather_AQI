@@ -166,13 +166,19 @@ h5 {
   height: calc(100% - 20px);
 }
 
+.will-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.will-container label {
+  margin-right: 2rem;
+  margin-left: 6px;
+}
 .form-container {
   display: flex;
   flex-direction: column;
   width: 100%;
-}
-.form-container h5 {
-  margin-bottom: 1rem;
 }
 .form-container input {
   background-color: #e0dfdf;

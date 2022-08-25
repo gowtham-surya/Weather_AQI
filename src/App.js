@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Chart from 'react-apexcharts';
 import './App.css';
 import './assets/css/grid.css';
@@ -6,6 +6,7 @@ import treeHappy from './assets/images/tree-happy.png';
 import Header from './components/Header';
 
 const App = () => {
+  const [entry, setEntry] = useState('No');
   const weatherTitle = [
     {
       name: 'Temperature',
@@ -18,7 +19,7 @@ const App = () => {
       value: '78%',
     },
     {
-      name: 'Oxygen level',
+      name: 'Ozone level',
       image: 'bx bx-wind rain-color',
       value: '78%',
     },
@@ -149,22 +150,60 @@ const App = () => {
             </div>
             <div
               className="card-container col-4"
-              style={{ display: 'flex', justifyContent: 'center' }}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                height: '430px',
+              }}
             >
-              <form className="form-container">
-                <h5>AQI Calculator</h5>
-                <label>Materials:</label>
-                <datalist id="suggestions">
-                  <option>Coal</option>
-                  <option>Gas</option>
-                </datalist>
-                <input autoComplete="on" type="text" list="suggestions" />
-                <label>Staying From:</label>
-                <input type="date" name="ship-details" width="100%"></input>
-                <label>Staying Upto:</label>
-                <input type="date" name="ship-details" width="100%"></input>
-                <button type="submit">Calculate</button>
-              </form>
+              <h5 style={{ marginBottom: '2rem' }}>AQI Calculator</h5>
+              <label htmlFor="will-container">Is Ship Entry?</label>
+              <div
+                className="will-container"
+                onChange={(e) => setEntry(e.target.value)}
+              >
+                <input type="radio" name="will" value="Yes"></input>
+                <label htmlFor="Yes">Yes</label>
+                <input type="radio" name="will" value="No"></input>
+                <label htmlFor="No">No</label>
+              </div>
+              {entry === 'Yes' ? (
+                <form className="form-container">
+                  <label htmlFor="dropDown">Type of Shipment:</label>
+                  <datalist id="suggestions">
+                    <option value="Coal">Coal</option>
+                    <option value="Iron Ore">Iron Ore</option>
+                    <option value="Fertilizer">Fertilizer</option>
+                    <option value="POL">POL</option>
+                  </datalist>
+                  <input
+                    autoComplete="on"
+                    type="text"
+                    list="suggestions"
+                    className="dropDown"
+                  />
+                  <label htmlFor="fromDate">Staying From:</label>
+                  <input
+                    type="date"
+                    name="ship-details"
+                    width="100%"
+                    className="fromDate"
+                  ></input>
+                  <label htmlFor="toDate">Staying Upto:</label>
+                  <input
+                    type="date"
+                    name="ship-details"
+                    width="100%"
+                    className="toDate"
+                  ></input>
+                  <button type="submit">Calculate</button>
+                </form>
+              ) : (
+                <p style={{ marginTop: '1rem' }}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer vel molestie sem. Integer tempor, risus.
+                </p>
+              )}
             </div>
           </div>
           <div className="row">
