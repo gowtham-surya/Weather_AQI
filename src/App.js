@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import Chart from 'react-apexcharts';
 import './App.css';
 import './assets/css/grid.css';
@@ -7,6 +8,7 @@ import Header from './components/Header';
 
 const App = () => {
   const [entry, setEntry] = useState('No');
+
   const weatherTitle = [
     {
       name: 'Temperature',
@@ -113,6 +115,65 @@ const App = () => {
     },
   ];
 
+  const [weather, setWeather] = useState(weatherTitle);
+  const [pollution, setPollution] = useState(airPollutants);
+  const [axdata, setaxdata] = useState();
+
+  useEffect(() => {
+    setInterval(() => {
+      axios
+        .get('https://exploremychoice.in/sih/evolvers/getdata.php')
+        .then((response) => {
+          setaxdata(response.data[0]);
+        });
+
+      setWeather([
+        {
+          name: 'Temperature',
+          image: 'bx bxs-hot temp-color',
+          value: `${axdata.temperature}°C`,
+        },
+        {
+          name: 'Humidity',
+          image: 'bx bx-cloud-rain rain-color',
+          value: `${axdata.humidity}%`,
+        },
+        {
+          name: 'Ozone level',
+          image: 'bx bx-wind rain-color',
+          value: `${axdata.ozone}%`,
+        },
+      ]);
+
+      setPollution([
+        {
+          name: 'PM 2.5',
+          value: axdata.pm2,
+        },
+        {
+          name: 'VoC',
+          value: axdata.voc,
+        },
+        {
+          name: 'SO2',
+          value: axdata.so2,
+        },
+        {
+          name: 'NO2',
+          value: axdata.no2,
+        },
+        {
+          name: 'CO',
+          value: axdata.co,
+        },
+        {
+          name: 'NH3',
+          value: axdata.nh3,
+        },
+      ]);
+    }, 2000);
+  }, [axdata]);
+
   return (
     <div>
       <Header />
@@ -135,7 +196,7 @@ const App = () => {
                 </div>
               </div>
               <div className="row">
-                {weatherTitle.map((lists, index) => (
+                {weather.map((lists, index) => (
                   <div className="col-4" key={index}>
                     <div className="status-card flexbox fdir-col">
                       <h4>{lists.name}</h4>
@@ -209,7 +270,7 @@ const App = () => {
           <div className="row">
             <div className="col-12">
               <div className="row">
-                {airPollutants.map((lists, index) => (
+                {pollution.map((lists, index) => (
                   <div className="col-2" key={index}>
                     <div className="status-card status-card-bar flexbox fdir-col">
                       <div className="flexbox">
