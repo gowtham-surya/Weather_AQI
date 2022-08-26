@@ -23,7 +23,7 @@ const App = () => {
     {
       name: 'Ozone level',
       image: 'bx bx-wind rain-color',
-      value: '78%',
+      value: '18%',
     },
   ];
 
@@ -91,27 +91,27 @@ const App = () => {
   const airPollutants = [
     {
       name: 'PM 2.5',
-      value: 35,
+      value: 15,
     },
     {
       name: 'VoC',
-      value: 48,
+      value: 38,
     },
     {
       name: 'SO2',
-      value: 76,
+      value: 6,
     },
     {
       name: 'NO2',
-      value: 92,
+      value: 22,
     },
     {
       name: 'CO',
-      value: 41,
+      value: 31,
     },
     {
       name: 'NH3',
-      value: 64,
+      value: 14,
     },
   ];
 
@@ -186,7 +186,7 @@ const App = () => {
                 <h5>Real-time air pollution in Port</h5>
                 <div className="card-details row">
                   <div className="flexbox fdir-col col-6">
-                    <h5>Last Update: 18 Jul 2022, 04:20pm</h5>
+                    <h5>Last Update: 26 Aug 2022, 04:20pm</h5>
                     <button className="btn">Good</button>
                   </div>
                   <div className="flexbox col-6">
