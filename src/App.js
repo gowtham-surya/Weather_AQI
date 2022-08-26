@@ -187,7 +187,7 @@ const App = () => {
                 <div className="card-details row">
                   <div className="flexbox fdir-col col-6">
                     <h5>Last Update: 26 Aug 2022, 04:20pm</h5>
-                    <button className="btn">Good</button>
+                    <button className="btn">Satisfactory</button>
                   </div>
                   <div className="flexbox col-6">
                     <h1>98</h1>
