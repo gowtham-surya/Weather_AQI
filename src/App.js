@@ -95,7 +95,7 @@ const App = () => {
     },
     {
       name: 'VoC',
-      value: 38,
+      value: 18,
     },
     {
       name: 'SO2',
@@ -103,11 +103,11 @@ const App = () => {
     },
     {
       name: 'NO2',
-      value: 22,
+      value: 17,
     },
     {
       name: 'CO',
-      value: 31,
+      value: 10,
     },
     {
       name: 'NH3',
