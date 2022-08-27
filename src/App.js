@@ -171,7 +171,7 @@ const App = () => {
           value: axdata.nh3,
         },
       ]);
-    }, 2000);
+    }, 10000);
   }, [axdata]);
 
   return (
