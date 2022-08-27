@@ -8,9 +8,9 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Entry} />
-        <Route path="/port_A/:type" component={Port_A} />
-        <Route path="/port_B/:type" component={Port_A} />
-        <Route path="/port_C/:type" component={Port_A} />
+        <Route path="/port_A" component={Port_A} />
+        <Route path="/port_B" component={Port_A} />
+        <Route path="/port_C" component={Port_A} />
       </Switch>
     </BrowserRouter>
   );
