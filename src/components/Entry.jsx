@@ -20,13 +20,13 @@ const Entry = () => {
 
   const onhandleWhenEnter = (e) => {
     if (Port === 'Port A') {
-      navigate.push(`/port_A/${Type}`);
+      navigate.push(`/port_A`);
       window.location.reload(false);
     } else if (Port === 'Port B') {
-      navigate.push(`/port_B/${Type}`);
+      navigate.push(`/port_B`);
       window.location.reload(false);
     } else if (Port === 'Port C') {
-      navigate.push(`/port_C/${Type}`);
+      navigate.push(`/port_C`);
       window.location.reload(false);
     }
   };
