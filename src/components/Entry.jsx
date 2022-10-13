@@ -86,7 +86,7 @@ const Entry = () => {
         <div className="row">
           {airQualityIndex.map((lists, index) => (
             <div className="col-4" key={index}>
-              <a href="https://bitsathy.ac.in">
+              <a href="https://zesty-banoffee-6773bc.netlify.app/">
                 <div className="status-card status-card-bar flexbox fdir-col">
                   <div className="flexbox">
                     <Chart
