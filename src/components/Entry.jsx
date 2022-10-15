@@ -6,16 +6,16 @@ const Entry = () => {
   
   var airQualityIndex = [
     {
-      name: 'Port 1',
-      value: 78,
+      name: 'chennai',
+      value: 42,
     },
     {
-      name: 'Port 2',
-      value: 87,
+      name: 'vizag',
+      value: 54,
     },
     {
-      name: 'Port 3',
-      value: 95,
+      name: 'kochi',
+      value: 110,
     },
   ];
 
